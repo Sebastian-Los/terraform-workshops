@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+    - name: install docker
+      shell: "curl -fsSL https://test.docker.com -o get-docker.sh; sudo sh get-docker.sh"
+    - name: download images
+      shell: "cd /home/ubuntu/data; wget https://neoteric.eu/wp-content/uploads/2019/10/BND24215-Edit.jpg; wget https://neoteric.eu/wp-content/uploads/2019/10/BND27580.jpg; wget https://neoteric.eu/wp-content/uploads/2019/10/BND23633.jpg; wget https://neoteric.eu/wp-content/uploads/2019/10/BND24044.jpg; wget https://neoteric.eu/wp-content/uploads/2019/10/BND24152-Edit.jpg"
+    - name: run docker container
+      shell: 'docker run --restart always -d -v /home/ubuntu/data:/images -p 80:80 -e "GALLERY_TITLE=Neoteric" alterway/docker-image-gallery'

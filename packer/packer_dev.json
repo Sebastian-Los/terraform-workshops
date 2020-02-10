@@ -1,0 +1,37 @@
+{
+  "variables": {
+    "PROJECT_ID": "<project-name>",
+    "REGION": "europe-west1-b",
+    "IMAGE_NAME": "my-instance-image-v1",
+    "FILE_PATH": "data/BND236601.jpg"
+  },
+  "builders": [
+    {
+      "type": "googlecompute",
+      "project_id": "{{user `PROJECT_ID`}}",
+      "image_name": "{{user `IMAGE_NAME`}}",
+      "disk_size": 10,
+      "source_image_family": "ubuntu-1910",
+      "image_description": "created-with-packer",
+      "ssh_username": "root",
+      "tags": "packer",
+      "zone": "{{user `REGION`}}"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "file",
+      "source": "data/file.jpg",
+      "direction": "upload",
+      "destination": "/tmp/file.jpg"
+    },
+    {
+      "type": "shell",
+      "script": "script.sh"
+    },
+    {
+      "type": "ansible",
+      "playbook_file": "../ansible/ansible.yml"
+    }
+  ]
+}

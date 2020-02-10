@@ -1,0 +1,28 @@
+*.out
+
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+
+# To provent possibly sensitive data
+**/account.json
+**/database.yml
+**/database.yaml
+
+# IDE configuration files
+.vscode/
+.idea/
+
+# Ignore any .tfvars files that are generated automatically for each Terraform run. Most
+# .tfvars files are managed as part of configuration and so should be included in
+# version control.
+#
+# example.tfvars
+
+.DS_Store

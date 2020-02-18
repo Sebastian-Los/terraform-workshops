@@ -11,6 +11,7 @@
 //  project_id  = local.project
 //  bucket_name = "my-bucket1"
 //}
+
 //
 //module "my-bucket2" {
 //  source = "../../modules/storage-buckets"

@@ -1,3 +1,3 @@
-//module "firewall_rules" {
-//  source = "../../modules/firewall"
-//}
+module "firewall_rules" {
+  source = "../../modules/firewall"
+}

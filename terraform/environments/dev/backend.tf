@@ -1,17 +1,17 @@
 //terraform {
 //  backend "gcs" {
-//    bucket = "<project-name>-tf-state"
+//    bucket = "los-tf-demo-dev-tf-state"
 //    prefix = "tfstate"
 //  }
 //}
 
-//terraform {
-//  backend "remote" {
-//    hostname = "app.terraform.io"
-//    organization = "<organization-name>"
-//
-//    workspaces {
-//      name = "<worksapce-name>"
-//    }
-//  }
-//}
+terraform {
+  backend "remote" {
+    hostname = "app.terraform.io"
+    organization = "sebastian-los"
+
+    workspaces {
+      name = "terraform-workshops-dev"
+    }
+  }
+}

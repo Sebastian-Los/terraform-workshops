@@ -1,6 +1,6 @@
 {
   "variables": {
-    "PROJECT_ID": "<project-name>",
+    "PROJECT_ID": "los-tf-demo-dev",
     "REGION": "europe-west1-b",
     "IMAGE_NAME": "my-instance-image-v1",
     "FILE_PATH": "data/BND236601.jpg"
